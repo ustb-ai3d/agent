@@ -20,8 +20,6 @@ function clean() {
 function build_and_push_image() {
   docker build -t "portainer/agent:${1}-${VERSION}" -f build/linux/Dockerfile .
   docker tag "portainer/agent:${1}-${VERSION}" "portainer/agent:${1}"
-  docker push "portainer/agent:${1}-${VERSION}"
-  docker push "portainer/agent:${1}"
 }
 
 function build_archive() {
@@ -58,6 +56,6 @@ function build_all() {
 }
 
 mkdir dist
-build_all 'linux-amd64 linux-arm linux-arm64 linux-ppc64le linux-s390x windows-amd64'
+build_all 'linux-amd64'
 
 exit 0
