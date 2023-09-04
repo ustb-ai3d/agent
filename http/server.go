@@ -87,7 +87,7 @@ func (server *APIServer) Start(edgeMode bool) error {
 	httpServer := &http.Server{
 		Addr:         server.addr + ":" + server.port,
 		Handler:      httpHandler,
-		ReadTimeout:  120 * time.Second,
+		ReadTimeout:  30 * time.Minute,
 		WriteTimeout: 30 * time.Minute,
 	}
 
